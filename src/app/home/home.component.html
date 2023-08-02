@@ -1,6 +1,45 @@
 <div class="bg-pink-500 flex justify-center items-center h-screen">
-    <div class="bg-white h-4/5 w-4/5 rounded-lg flex flex-row">
+    <div class="bg-white h-4/5 w-4/5 rounded-lg flex flex-row shadow-md">
         <div class="basis-1/2">01</div>
-        <div class="basis-1/2">02</div>
+        <div class="basis-1/2 px-8 pt-6 pb-8 mb-4">
+            <h6 class="text-lg font-bold ">Book an Appointment with Us</h6>
+            <p class="font-sm">We offer the best services from Nail Art,Hair Dressing,Massage & Spa.</p>
+            
+            <div></div>
+            <form>
+                <div class="flex flex-row">
+                    <div>
+                        <label>Your Name</label> 
+                        <input class="basis-1/2 rounded-lg p-2.5 border border-gray-300" name="firstName" type="text" placeholder="Please enter your Name">
+                    </div>
+                   <div>
+                        <label>Email Address</label> 
+                        <input class="basis-1/2 rounded-lg p-2.5 border border-gray-300" name="emailAdd" type="email" placeholder="Please enter your email">
+                   </div>
+                  
+                </div>
+
+                <div class="flex flex-row">
+                    <div>
+                        <label>Select a service </label> 
+                        <input class="basis-1/2 rounded-lg p-2.5  border border-gray-300" name="service" type="text" placeholder="Please select a service">
+                    </div>
+                    <div>
+                        <label>Schedule a date</label> 
+                        <input class="basis-1/2 rounded-lg p-2.5 border border-gray-300" name="appointmentDate" type="text" placeholder="Please select a date">
+                    </div>
+                </div>
+                <div class="block">
+                    <label for="message" class="block">Additional message</label>
+                    <textarea id="message" placeholder="We'd like to hear from you..." rows="4" class="block p-2.5 w-full rounded-lg  border border-gray-300 focus:shadow-outline" ></textarea>
+                </div>
+                
+
+           
+                
+                
+            </form>
+
+        </div>
     </div>
 </div>
