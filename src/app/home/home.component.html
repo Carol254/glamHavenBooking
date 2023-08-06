@@ -25,15 +25,15 @@
                     </div>
 
                     <div class="flex flex-row">
-                        <div>
-                            <label class="font-semibold">Select a service </label>
-                            <select  class="basis-1/2 rounded-lg p-2.5  border border-gray-300" name="service" type="text" placeholder="Please select a service">
-                                <option>hello</option>
-                                <option>hello</option>
-                                <option>hello</option>
-                            </select> 
-                            <input>
-                        </div>
+                        <mat-form-field>
+                            <mat-label>Please select service</mat-label>
+                            <mat-select>
+                              <mat-option *ngFor="let service of services" [value]="service.value">
+                                {{service.viewValue}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        
                         <div>
                             <label class="font-semibold">Schedule a date</label> 
                             <input  class="basis-1/2 rounded-lg p-2.5 border border-gray-300" name="appointmentDate" type="date" placeholder="Please select a date">
