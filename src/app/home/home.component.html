@@ -16,19 +16,19 @@
                     <div class="flex flex-row">
                         <div>
                             <label class="font-semibold">Your Name</label> 
-                            <input class="basis-1/2 rounded-lg p-2.5 border border-gray-300" name="firstName" type="text" placeholder="Please enter your Name">
+                            <input class="basis-1/2 rounded-lg p-2.5 border border-gray-300 focus:outline-pink-500" name="firstName" type="text" placeholder="Please enter your Name">
                         </div>
                         <div>
                             <label class="font-semibold">Email Address</label> 
-                            <input class="basis-1/2 rounded-lg p-2.5 border border-gray-300" name="emailAdd" type="email" placeholder="Please enter your email">
+                            <input class="basis-1/2 rounded-lg p-2.5 border border-gray-300 focus:outline-pink-500" name="emailAdd" type="email" placeholder="Please enter your email">
                         </div>
                     </div>
 
                     <div class="flex flex-row">
                         <div>
-                             <mat-form-field class="basis-1/2 rounded-lg p-2.5 border border-gray-300">
+                             <mat-form-field class="basis-1/2 rounded-lg p-2.5 border border-gray-300 focus:outline-pink-500">
                             <mat-label class="font-semibold" >Please select service</mat-label>
-                            <mat-select>
+                            <mat-select class="focus:outline-pink-500">
                               <mat-option *ngFor="let service of services" [value]="service.value">
                                 {{service.viewValue}}
                               </mat-option>
@@ -38,12 +38,12 @@
                         
                         <div>
                             <label class="font-semibold">Schedule a date</label> 
-                            <input  class="basis-1/2 rounded-lg p-2.5 border border-gray-300" name="appointmentDate" type="date" placeholder="Please select a date">
+                            <input  class="basis-1/2 rounded-lg p-2.5 border border-gray-300 focus:outline-pink-500" name="appointmentDate" type="date" placeholder="Please select a date">
                         </div>
                     </div>
                     <div class="block">
                         <label for="message" class="block font-semibold">Additional message</label>
-                        <textarea id="message" placeholder="We'd like to hear from you..." rows="4" class="block p-2.5 w-full rounded-lg  border border-gray-300 focus:shadow-outline" ></textarea>
+                        <textarea id="message" placeholder="We'd like to hear from you..." rows="4" class="block p-2.5 w-full rounded-lg  border border-gray-300 focus:outline-pink-500" ></textarea>
                     </div>
                     
                     <button class="bg-pink-500 hover:bg-pink-400 text-white py-2 px-6 rounded mt-2">Book Appointment</button>
