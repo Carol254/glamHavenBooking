@@ -27,11 +27,9 @@
                     <div class="grid grid-cols-2 gap-2">
                         <div>
                           <label  class="font-semibold">Please select a service</label>
-                          <select class="p-2.5 border border-gray-300 rounded-lg focus:outline-pink-500 w-full">
+                          <select class="p-2.5 border border-gray-300 rounded-lg focus:outline-pink-500 w-full" >
                             <option selected>Open this select menu</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                            <option *ngFor="let service of services" [value]="service.value">{{service.viewValue}}</option>
                           </select>
                         </div>
                         
