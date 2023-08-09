@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder,FormControl } from '@angular/forms';
 interface Service {
   value: string;
   viewValue: string;
@@ -12,6 +13,11 @@ interface Service {
 
 
 export class HomeComponent {
+
+  firstName = new FormControl('');
+  emailAddress = new FormControl('');
+
+ 
   services: Service[] = [
     {value: 's-1', viewValue: 'Manicure'},
     {value: 's-2', viewValue: 'Pedicure'},
@@ -19,6 +25,11 @@ export class HomeComponent {
     {value: 's-4', viewValue: 'Hair Styling'},
     {value: 's-3', viewValue: 'Sea C Spa Treatment'}
   ];
+
+  onSubmit(){
+  
+  }
+ 
 
 
 }
