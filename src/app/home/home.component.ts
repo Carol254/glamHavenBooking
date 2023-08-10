@@ -26,6 +26,10 @@ export class HomeComponent {
     {value: 's-3', viewValue: 'Sea C Spa Treatment'}
   ];
 
+  updateName() {
+    this.firstName.setValue('Nancy');
+  }
+
   onSubmit(){
   
   }

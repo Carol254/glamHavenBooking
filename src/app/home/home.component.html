@@ -27,7 +27,7 @@
                     <div class="grid grid-cols-2 gap-2">
                         <div>
                           <label  class="font-semibold">Please select a service</label>
-                          <select class="p-2.5 border border-gray-300 rounded-lg focus:outline-pink-500 w-full" >
+                          <select class="form-select p-2.5 border border-gray-300 rounded-lg focus:outline-pink-500 w-full" >
                             <option selected>Open this select menu</option>
                             <option *ngFor="let service of services" [value]="service.value">{{service.viewValue}}</option>
                           </select>
@@ -35,7 +35,7 @@
                         
                         <div>
                             <label class="font-semibold">Schedule a date</label> 
-                            <input  class="rounded-lg p-2.5 border border-gray-300 focus:outline-pink-500 w-full" name="appointmentDate" type="text" placeholder="Please select a date">
+                            <input  class="form-input rounded-lg p-2.5 border border-gray-300 focus:outline-pink-500 w-full" name="appointmentDate" type="date" placeholder="Please select a date">
                         </div>
                     </div>
                     <div class="block">
@@ -43,7 +43,7 @@
                         <textarea id="message" placeholder="We'd like to hear from you..." rows="4" class="block p-2.5 w-full rounded-lg  border border-gray-300 focus:outline-pink-500" ></textarea>
                     </div>
                     
-                    <button class="bg-pink-500 hover:bg-pink-400 text-white py-2 px-6 rounded mt-2" >Book Appointment</button>
+                    <button class="bg-pink-500 hover:bg-pink-400 text-white py-2 px-6 rounded mt-2" (click)="updateName()">Book Appointment</button>
                 </form>
 
             </div>
