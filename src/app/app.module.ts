@@ -9,6 +9,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { BookingComponent } from './booking/booking.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes:Routes = [
+  {path: '', redirectTo: '/home',pathMatch: 'full'},
+  {path:'/booking', component:BookingComponent}
+]
 
 
 @NgModule({
@@ -18,16 +24,19 @@ import { BookingComponent } from './booking/booking.component';
     BookingComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     MatSelectModule,
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
 
 
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
