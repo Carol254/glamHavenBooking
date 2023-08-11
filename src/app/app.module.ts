@@ -15,7 +15,7 @@ import { APP_BASE_HREF } from '@angular/common';
 const routes:Routes = [
   {path:'home', component:HomeComponent},
   {path: '', redirectTo:'home',pathMatch: 'full'},
-  {path:'booking', component:BookingComponent}
+  {path:'home/booking', component:BookingComponent}
 ]
 
 
