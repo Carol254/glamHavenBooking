@@ -32,10 +32,4 @@ export class HomeComponent {
     this.router.navigate(['home/booking']);
   }
 
-  onSubmit(){
-  
-  }
- 
-
-
 }
