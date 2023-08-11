@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormControl, Validators,FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { ClientBookingDataService } from '../client-booking-data.service';
 interface Service {
   value: string;
   viewValue: string;
@@ -12,30 +13,10 @@ interface Service {
   styleUrls: ['./home.component.css']
 })
 
-
 export class HomeComponent implements OnInit {
 
   disabledBtn: boolean = false;
   clientForm!: FormGroup;
-
-
-  constructor(  private router:Router){}
-
-
-  ngOnInit(): void {
-
-    this.clientForm = new FormGroup({
-            firstName :new FormControl('',[Validators.required]),
-            emailAddress: new FormControl(''),
-            service: new FormControl(''),
-            appointmentDate: new FormControl(''),
-            message: new FormControl('')
-    });
-
- 
-    
-  }
-
 
   services: Service[] = [
     {value: 's-1', viewValue: 'Manicure'},
@@ -45,8 +26,25 @@ export class HomeComponent implements OnInit {
     {value: 's-3', viewValue: 'Sea C Spa Treatment'}
   ];
 
+  constructor(
+    private router:Router,
+    private clientBookingDataService:ClientBookingDataService){}
+
+  ngOnInit(): void {
+    this.clientForm = new FormGroup({
+            firstName :new FormControl('',[Validators.required]),
+            emailAddress: new FormControl(''),
+            service: new FormControl(''),
+            appointmentDate: new FormControl(''),
+            message: new FormControl('')
+    });
+
+  }
+
  onSubmit() {
-  console.log(this.clientForm);
+    console.log(this.clientForm);
+    this.clientBookingDataService.setFormData(this.clientForm);
+    this.router.navigate(['home/booking']);
   }
 
 }
