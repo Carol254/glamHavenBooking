@@ -10,10 +10,12 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { BookingComponent } from './booking/booking.component';
 import { RouterModule, Routes } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 const routes:Routes = [
-  {path: '', redirectTo: '/home',pathMatch: 'full'},
-  {path:'/booking', component:BookingComponent}
+  {path:'home', component:HomeComponent},
+  {path: '', redirectTo:'home',pathMatch: 'full'},
+  {path:'booking', component:BookingComponent}
 ]
 
 
@@ -32,12 +34,9 @@ const routes:Routes = [
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-
-
-
   ],
-  exports: [RouterModule],
-  providers: [],
+  exports: [],
+  providers: [{provide:APP_BASE_HREF,useValue:'/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
