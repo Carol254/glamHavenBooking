@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder,FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder,FormControl, Validators,FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 interface Service {
   value: string;
@@ -13,12 +13,29 @@ interface Service {
 })
 
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  firstName = new FormControl('');
-  emailAddress = new FormControl('');
+  disabledBtn: boolean = false;
+  clientForm!: FormGroup;
+
 
   constructor(  private router:Router){}
+
+
+  ngOnInit(): void {
+
+    this.clientForm = new FormGroup({
+            firstName :new FormControl('',[Validators.required]),
+            emailAddress: new FormControl(''),
+            service: new FormControl(''),
+            appointmentDate: new FormControl(''),
+            message: new FormControl('')
+    });
+
+ 
+    
+  }
+
 
   services: Service[] = [
     {value: 's-1', viewValue: 'Manicure'},
@@ -28,8 +45,8 @@ export class HomeComponent {
     {value: 's-3', viewValue: 'Sea C Spa Treatment'}
   ];
 
-  bookAppointment() {
-    this.router.navigate(['home/booking']);
+ onSubmit() {
+  console.log(this.clientForm);
   }
 
 }
